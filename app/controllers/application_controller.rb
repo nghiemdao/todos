@@ -5,9 +5,17 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_path unless signed_in?
   end
 
+  def current_email
+    session[:current_email]
+  end
+
+  def sign_in_as(email)
+    session[:current_email] = email
+  end
+
   private
 
   def signed_in?
-    session[:current_email].present?
+    current_email.present?
   end
 end
