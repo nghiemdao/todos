@@ -27,4 +27,5 @@ end
 group :test do
   gem 'capybara', '>= 3.11.1'
   gem 'database_cleaner', '>= 1.7.0'
+  gem 'shoulda-matchers', '4.0.0.rc1'
 end

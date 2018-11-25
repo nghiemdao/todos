@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+RSpec.describe Todo, 'validation', type: :model do
+  it { should validate_presence_of(:title) }
+end
+
 RSpec.describe Todo, '#completed', type: :model do
   it 'return true if completed_at is set' do
     todo = Todo.new(completed_at: Time.current)
